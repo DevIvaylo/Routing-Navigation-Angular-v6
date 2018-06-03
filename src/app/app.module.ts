@@ -2,7 +2,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {RouterModule, Routes} from '@angular/router';
+import {AppRoutingModule} from './app-routing.module';
 
 
 // components
@@ -12,12 +12,6 @@ import {HeroesListComponent} from './heroes-list/heroes-list.component';
 import {PageNotFoundComponent} from './page-not-found.component';
 
 
-const appRoutes: Routes = [
-  {path: 'crisis-center', component: CrisisListComponent},
-  {path: 'heroes', component: HeroesListComponent},
-  {path: '', redirectTo: '/heroes', pathMatch: 'full'},
-  {path: '**', component: PageNotFoundComponent}
-];
 
 
 @NgModule({
@@ -31,7 +25,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes, {enableTracing: true})    // <-- debugging  purposes only
+    AppRoutingModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
