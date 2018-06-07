@@ -39,10 +39,18 @@ export class HeroDetailComponent implements OnInit {
               private route: ActivatedRoute) {
   }
 
+  // In the ngOnInit method, you use the ActivatedRoute service to retrieve the parameters for the route, pull the hero id
+  // from the parameters and retrieve the hero to display.
   ngOnInit() {
-    this.hero$ = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) => this.service.getHero(params.get('id')))
-    );
+    /*  this.hero$ = this.route.paramMap.pipe(
+        // The observable paramMap property detect when the route parameters change from within the same instance.
+        switchMap((params: ParamMap) => this.service.getHero(params.get('id')))
+      );*/
+
+    // The route.snapshot provides the initial value of the route parameter map. You can access the parameters directly
+    // without subscribing or adding observable operators. It's much simpler to write and read:
+    let id = this.route.snapshot.paramMap.get('id');
+    this.hero$ = this.service.getHero(id);
   }
 
   goToHeroes(hero: Hero) {
