@@ -25,7 +25,7 @@ export class HeroListComponent implements OnInit {
 
   heroes$: Observable<Hero[]>;
   public selectedId: number;
-
+  
   constructor(private service: HeroService,
               private route: ActivatedRoute) {
   }
