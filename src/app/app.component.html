@@ -1,3 +1,4 @@
+<mat-progress-bar [color]="'red'" mode="determinate" [value]="loader.progress$|async"></mat-progress-bar>
 <h1>Angular Router</h1>
 <nav>
   <a routerLink="/crisis-center" routerLinkActive="active">Crisis Center</a>
@@ -5,4 +6,7 @@
 </nav>
 <!--The router adds the <router-outlet> element to the DOM and subsequently inserts the navigated view element immediately after the <router-outlet>.-->
 <router-outlet></router-outlet>
-
+<div>
+  <ngx-loading-bar [color]="'green'" diameter="60px"></ngx-loading-bar>
+</div>
+    <!--<mat-spinner  color="yellow" mode="indeterminate" color="accent" aria-label></mat-spinner>-->
