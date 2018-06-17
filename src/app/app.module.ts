@@ -5,6 +5,9 @@ import {FormsModule} from '@angular/forms';
 import {HeroesModule} from './heroes/heroes.module';
 import {AppRoutingModule} from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {LoadingBarRouterModule} from '@ngx-loading-bar/router';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 // components
 import {AppComponent} from './app.component';
@@ -25,7 +28,10 @@ import {PageNotFoundComponent} from './page-not-found.component';
     FormsModule,
     HeroesModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    LoadingBarRouterModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    AppRoutingModule,
 
   ],
   providers: [],
